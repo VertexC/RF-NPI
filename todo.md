@@ -1,6 +1,7 @@
 ### npi
 - fix bug in train data generation[Jianyu]
-- move model into pytorch
-    - 
+- develop new method for model eval
+- move model into pytorch[Bowen]
 
 ### RF
+- how to apply RF[Ruoyi, Zhuwang]

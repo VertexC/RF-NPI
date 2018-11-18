@@ -153,20 +153,4 @@ class Arguments():             # Program Arguments
         self.arg_vec = np.zeros((num_args, arg_depth), dtype=np.float32)
 
 
-def get_args(args, arg_in=True):
-    if arg_in:
-        arg_vec = np.zeros((CONFIG["ARGUMENT_NUM"], CONFIG["ARGUMENT_DEPTH"]), dtype=np.int32)
-    else:
-        arg_vec = [np.zeros((CONFIG["ARGUMENT_DEPTH"]), dtype=np.int32) for _ in
-                   range(CONFIG["ARGUMENT_NUM"])]
-    if len(args) > 0:
-        for i in range(CONFIG["ARGUMENT_NUM"]):
-            if i >= len(args):
-                arg_vec[i][CONFIG["DEFAULT_ARG_VALUE"]] = 1
-            else:
-                arg_vec[i][args[i]] = 1
-    else:
-        for i in range(CONFIG["ARGUMENT_NUM"]):
-            arg_vec[i][CONFIG["DEFAULT_ARG_VALUE"]] = 1
-    return arg_vec.flatten() if arg_in else arg_vec
 
